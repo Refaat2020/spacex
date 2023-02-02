@@ -1,16 +1,30 @@
-# spacex
 
-A new Flutter project.
+# SpaceX App
 
-## Getting Started
+SpaceX App  is using flutter and dart using bloc as state management and clean architecture pattern
+and dio for rest api
+This project consist of two screens.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## How to build this project
+1-install flutter version  3.3.8
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+2-clone this project
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3- open this project using your editor
+
+4- for build use this command "flutter build apk --split-per-abi"
+## Tech Stack
+
+**Stack:** flutter,dart
+
+**flutter_bloc:** The best state management solution is the one that works the best for you
+
+**ImageLoader:** I used cached_network_image A flutter library to show images from the internet and keep them in the cache directory.
+
+
+
+## Screenshots
+
+![App Screenshot](https://i.postimg.cc/QxqLZdq9/Screenshot-1675372625.png)
+
