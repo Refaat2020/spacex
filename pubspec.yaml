@@ -35,20 +35,24 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   #ui
-  flutter_svg: ^1.0.3
-  lottie: ^1.2.2
-  flutter_screenutil: ^5.3.1
+  flutter_svg: ^1.1.6
+  lottie: ^2.2.0
+  flutter_screenutil: ^5.6.1
   cached_network_image: ^3.2.0
   f_datetimerangepicker: ^0.2.0
+  custom_date_range_picker: ^1.0.6
   ##logic
-  flutter_bloc: ^8.0.1
+  flutter_bloc: ^8.1.1
   equatable: ^2.0.3
   intl: ^0.17.0
-  dio: ^4.0.4
+  dio: ^4.0.6
   get_it: ^7.2.0
-  url_launcher: ^6.0.20
+  url_launcher: ^6.1.8
+  dartz: ^0.10.1
+  logger: ^1.1.0
+
   ##test
-  bloc_test: ^9.0.2
+  bloc_test: ^9.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

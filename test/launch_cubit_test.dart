@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:spacex/config/locator.dart';
-import 'package:spacex/cubit/launch_cubit.dart';
+import 'package:spacex/core/config/locator.dart';
+import 'package:spacex/feature/upcoming_feature/domin/cubit/launch_cubit.dart';
 import 'package:test/test.dart';
 
 void main() {

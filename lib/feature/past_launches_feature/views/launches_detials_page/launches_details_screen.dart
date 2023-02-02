@@ -1,11 +1,14 @@
 
+import 'package:spacex/feature/past_launches_feature/domin/cubit/past_launches_cubit.dart';
 import 'package:spacex/file_export.dart';
-class LaunchesDetailsScreen extends StatelessWidget {
-  const LaunchesDetailsScreen({Key? key}) : super(key: key);
 
+import '../../../upcoming_feature/data/model/launche_model.dart';
+
+class LaunchesDetailsScreen extends StatelessWidget {
+  const LaunchesDetailsScreen({Key? key,this.selectedOne}) : super(key: key);
+  final LaunchModel? selectedOne;
   @override
   Widget build(BuildContext context) {
-    final launchCubit = context.watch<LaunchCubit>();
     return Scaffold(
         body: SingleChildScrollView(
           child: Padding(
@@ -13,16 +16,16 @@ class LaunchesDetailsScreen extends StatelessWidget {
             child: Column(
 
               children: [
-                launchCubit.selectedOne!.hasPhotos!?
+               selectedOne!.hasPhotos!?
                 CachedNetworkImage(
-                  imageUrl: launchCubit.selectedOne!.photos![0],
+                  imageUrl: selectedOne!.photos![0],
                   fit: BoxFit.contain,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                   const LoadingWidget(),
                   errorWidget: (context, url, error) =>  const LoadingWidget(),
                 )
                 :CachedNetworkImage(
-                  imageUrl: launchCubit.selectedOne!.patchUrl!,
+                  imageUrl: selectedOne!.patchUrl!,
                   fit: BoxFit.contain,
                   progressIndicatorBuilder: (context, url, downloadProgress) =>
                   const LoadingWidget(),
@@ -31,19 +34,19 @@ class LaunchesDetailsScreen extends StatelessWidget {
 
                 SizedBox(height: 10.h,),
 
-                Text("Name : ${launchCubit.selectedOne!.name!}"),
+                Text("Name : ${selectedOne!.name!}"),
                 SizedBox(height: 10.h,),
-                Text("Date : ${launchCubit.selectedOne!.getTentativeDate!}"),
+                Text("Date : ${selectedOne!.getTentativeDate!}"),
 
                 SizedBox(height: 10.h,),
-                Text("launchpad : ${launchCubit.selectedOne!.launchpad!}"),
+                Text("launchpad : ${selectedOne!.launchpad!}"),
                 SizedBox(height: 10.h,),
-                Text("Rocket : ${launchCubit.selectedOne!.rocket!}"),
+                Text("Rocket : ${selectedOne!.rocket!}"),
                 SizedBox(height: 10.h,),
-                Text("Payloads : ${launchCubit.selectedOne!.payloads![0]}"),
+                Text("Payloads : ${selectedOne!.payloads![0]}"),
                 SizedBox(height: 10.h,),
 
-                launchCubit.selectedOne!.hasVideo!?
+                selectedOne!.hasVideo!?
                     Container(
                       height: 100.h,
                       width: 100.w,
@@ -55,7 +58,7 @@ class LaunchesDetailsScreen extends StatelessWidget {
                       child: GestureDetector(
                         child: const Icon(Icons.play_arrow),
                         onTap: () {
-                         launchCubit .launchURL( launchCubit.selectedOne!.getVideo!);
+                        context.read<PastLaunchesCubit>().launchURL(selectedOne!.getVideo!);
                         },
                       ),
                     )

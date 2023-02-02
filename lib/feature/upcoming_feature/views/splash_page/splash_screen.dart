@@ -1,5 +1,6 @@
 
-import '../../file_export.dart';
+import '../../../../file_export.dart';
+import '../../domin/cubit/launch_cubit.dart';
 
 class SplashScreen extends StatefulWidget {
 

@@ -1,7 +1,9 @@
 import 'package:spacex/file_export.dart';
 
-import 'config/app_router.dart';
-import 'config/locator.dart';
+import 'core/config/app_router.dart';
+import 'core/config/locator.dart';
+import 'feature/upcoming_feature/domin/cubit/launch_cubit.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,13 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-    builder: () => BlocProvider(
+    builder: (context, child) => BlocProvider(
       create: (context) => LaunchCubit(),
       child: MaterialApp(
         theme: ThemeData.dark(),
 
         builder: (context, widget) {
-          ScreenUtil.setContext(context);
           return MediaQuery(
             data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
             child: widget!,

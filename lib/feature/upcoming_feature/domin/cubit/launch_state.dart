@@ -12,6 +12,14 @@ class LaunchLoading extends LaunchState {
   @override
   List<Object> get props => [];
 }
+class LaunchError extends LaunchState {
+  final String errorMessage;
+
+  const LaunchError({required this.errorMessage});
+
+  @override
+  List<Object> get props => [];
+}
 class LaunchDone extends LaunchState {
   final List<LaunchModel>?pastLaunch;
 
@@ -20,16 +28,6 @@ class LaunchDone extends LaunchState {
   @override
   List<Object> get props => [];
 }
-class LaunchFilter extends LaunchState {
-  final List<LaunchModel>?pastLaunch;
 
-  LaunchFilter({this.pastLaunch});
 
-  @override
-  List<Object> get props => [];
-}
-class LaunchListEmpty extends LaunchState {
-  @override
-  List<Object> get props => [];
-}
 

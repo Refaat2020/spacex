@@ -1,6 +1,8 @@
 
 import 'package:dio/dio.dart';
-import 'package:spacex/config/dio_options.dart';
+import 'package:spacex/core/extension/response_extension.dart';
+
+import '../config/dio_options.dart';
 
 
 class RestCall {
@@ -11,9 +13,7 @@ class RestCall {
       dio.options = DioConfigOptions.options;
       Response response = await dio.get(apiUrl);
 
-      if (response.statusCode == 200) {
-        return response.data;
-      }
+     return response.handleResponse();
     } catch (e) {
       throw Exception(e);
     }

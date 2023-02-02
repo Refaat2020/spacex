@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:spacex/constant/app_api_endpoints.dart';
+
+import '../constant/app_api_endpoints.dart';
 
 class DioConfigOptions {
 

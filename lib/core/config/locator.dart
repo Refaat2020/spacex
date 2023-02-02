@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
-import 'package:spacex/repo/launches_repo.dart';
-import 'package:spacex/utils/rest_call.dart';
+
+import '../../feature/upcoming_feature/domin/repo/launches_repo.dart';
+import '../utils/rest_call.dart';
 
 
 final locator = GetIt.instance;
